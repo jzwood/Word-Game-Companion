@@ -22,10 +22,6 @@ window.onload = function main(){
                 tempDictionary.push(reverse(dictionary[i]));
         }
         reversedDictionary = tempDictionary.sort();
-        console.log(reversedDictionary.slice(0,50));
-        var i = endsIndex(reverse("ious"), min, max, point);
-        console.log(reversedDictionary.slice(i-1,i+3));
-        console.log(reversedDictionary[i]);
 }
 
 //reverses string
@@ -50,8 +46,8 @@ function matchWords(){
                 matchList = [];
                 if (endAt > -1) {
                         var entry = reversedDictionary[endAt];
-                        while(entry.startsWith(back)){
-                                if (entry.endsWith(front)) {
+                        while(entry.startsWith(back) && endAt < max){
+                                if (entry.endsWith(front)){
                                         matchList.push(reverse(entry));
                                 }entry = reversedDictionary[++endAt];
                         }
@@ -63,7 +59,7 @@ function matchWords(){
                 var startAt = beginsIndex(front,min, max, point);
                 if (startAt > -1) {
                         var entry = dictionary[startAt];
-                        while(entry.startsWith(front)){
+                        while(entry.startsWith(front) && startAt < max){
                                 if (entry.endsWith(back)){
                                         matches += entry + "\n";
                                 }entry = dictionary[++startAt];
@@ -82,9 +78,10 @@ function isLessThan(word, dictWord){
 function beginsIndex(startswith, lowLim, upLim, pointer) {
     var pointerWord = dictionary[pointer];
     if (pointerWord.startsWith(startswith)) {
-        while(pointerWord.startsWith(startswith)) {
+        while(pointerWord.startsWith(startswith) && pointer > 0) {
                 var pointerWord = dictionary[--pointer];
         }
+        if (pointer == 0) {return pointer;}//implicit else--> edge case of pointer = 0
         return pointer+1;
     }
     if(upLim - lowLim < 2){
@@ -100,9 +97,10 @@ function beginsIndex(startswith, lowLim, upLim, pointer) {
 function endsIndex(startswith, lowLim, upLim, pointer) {
     var pointerWord = reversedDictionary[pointer];
     if (pointerWord.startsWith(startswith)) {
-        while(pointerWord.startsWith(startswith)) {
+        while(pointerWord.startsWith(startswith) && pointer > 0) {
                 var pointerWord = reversedDictionary[--pointer];
         }
+        if (pointer == 0) {return pointer;}//implicit else--> edge case of pointer = 0
         return pointer+1;
     }
     if(upLim - lowLim < 2){
