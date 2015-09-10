@@ -131,14 +131,14 @@ function isWord(word, lowLim, upLim, pointer) {
 function setValidity() {
     var inputWord = document.getElementById("isWord").value.toLowerCase().trim();
     if (inputWord === "") {
-        document.getElementById("y").setAttribute("style","color:white");
-        document.getElementById("n").setAttribute("style","color:white");
+        document.getElementById("YN").innerHTML = '???';
+document.getElementById("YN").setAttribute("style","color:black");
     }
     else if (isWord(inputWord,min,max,point)) {
-        document.getElementById("y").setAttribute("style","color:green");
-        document.getElementById("n").setAttribute("style","color:white");
+        document.getElementById("YN").innerHTML = "Yes"
+        document.getElementById("YN").setAttribute("style","color:green");
     }else{
-        document.getElementById("y").setAttribute("style","color:white");
-        document.getElementById("n").setAttribute("style","color:red");
+        document.getElementById("YN").innerHTML = "No"
+        document.getElementById("YN").setAttribute("style","color:red");
     }
 }
