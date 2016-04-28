@@ -1,4 +1,4 @@
-## Word Game Companion ##
+## [Word Game Companion (wgc)](http://jzwood.github.io/Word-Game-Companion/) ##
 
 **wgc** is a super-mini web app that gives word-game enthusiasts tools for intelligent word searching.
 
