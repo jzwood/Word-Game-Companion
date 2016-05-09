@@ -40,7 +40,7 @@ button,select,input{
 }
 
 .matches {
-  text-align: left;
+  text-align: center;
   resize: none;
   overflow-y: visible;
   /*background-color: #fafafa;*/
