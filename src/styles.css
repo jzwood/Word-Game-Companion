@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Coming+Soon);
+
+/*reset*/
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input, abbr, article, aside, command, details, figcaption, figure, footer, header, hgroup, mark, meter, nav, output, progress, section, summary, time { margin: 0; padding: 0 }
+
+html,body{
+  width:100%;
+  height:100%;
+  display: block;
+  background: url('wrinkled-paper.jpg') repeat-y center center;
+}
+
+div{
+  display: block;
+}
+
+.header{
+  text-align: center;
+  padding:10px 0 10px 0;
+  overflow: hidden;
+  font-family: 'Coming Soon', cursive;
+}
+
+.container{
+  text-align: center;
+  margin: 0 auto 0 auto;
+  min-width: 280px;
+  width:90%;
+  /*background-color: #f2f2f2;*/
+  font-family: Verdana ,monospace;
+}
+
+button,select,input{
+  background-color: #fafafa;
+  font-size: 14pt;
+  font-family: 'Coming Soon', cursive;
+}
+.btn{
+  margin: 10px 0 10px 0;
+}
+
+.matches {
+  text-align: left;
+  resize: none;
+  overflow-y: visible;
+  /*background-color: #fafafa;*/
+  width:100%;
+}

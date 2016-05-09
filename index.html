@@ -3,59 +3,39 @@
 <meta charset="UTF-8">
 <script type="text/javascript" src="src/dictionary.js"></script>
 <script type="text/javascript" src="src/word matcher.js" charset="utf-8"></script>
-<style type="text/css">
-
-html,body{
-  width:100%;
-  height:100%;
-  margin:0;
-  padding:0;
-}
-
-body {
-  text-align: center;
-  border: black solid;
-}
-
-button{
-  margin-bottom:2px;
-}
-
-.matches {
-  resize: none;
-  overflow-y: scroll;
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="src/styles.css" rel="stylesheet" type="text/css">
 
 <body>
-  <header>
-    <h1>Word Game<br>Companion</h1></header>
-    <div>
-      <p>Type word to see if it's in the dictionary.</p>
-      <b>Enter Word:</b>
-      <input type="text" id="isWord" onkeyup="setValidity()" style="width:130px"></input>
-      <output id="YN">???</output>
-      <p><b>Or</b> search dictionary with criteria.</p>
-      <b>Starts With:</b>
-      <input type="text" id="start"></input>
-      <br><br>
-      <b>Ends With:</b>
-      <input type="text" id="end"></input>
-      <br><br>
-      <b>Length:</b>
-      <select id="letters">
-        <option value="-1">all lengths</option>
-        <option value="3">3 letters</option>
-        <option value="4">4 letter</option>
-        <option value="5">5 letters</option>
-        <option value="6">6 letters</option>
-        <option value="7">7+ letters</option>
-      </select>
-      <br><br>
-      <button onclick="matchWords()">Get Search Results</button>
-      <br>
-      <textarea class="matches" id="matchedWords" style="width: 250px; height: 200px" readonly=true></textarea>
-    </div>
-  </body>
+  <div class="header">
+    <h2>Word&nbsp;Game Companion</h2>
+  </div>
+  <div class="container">
+    <p>Enter word to quickly check if it is in the dictionary.</p><br>
+    <b>Enter Word:</b>
+    <input type="text" id="isWord" onkeyup="setValidity()" style="width:130px"></input>
+    <output id="YN">???</output><br>
+    <p><strong>Or</strong> search dictionary with criteria.</p><br>
+    <b>Starts With:</b>
+    <input type="text" id="start"></input>
+    <br>
+    <b>Ends &nbsp;With:</b>
+    <input type="text" id="end"></input><br>
+    <br>
+    <b>Length:</b>
+    <select id="letters">
+      <option value="-1">all lengths</option>
+      <option value="3">3 letters</option>
+      <option value="4">4 letter</option>
+      <option value="5">5 letters</option>
+      <option value="6">6 letters</option>
+      <option value="7">7+ letters</option>
+    </select>
+    <br>
+    <div class="btn"><button onclick="matchWords()">Get Search Results</button></div>
+    <br>
+    <p class="matches" id="matchedWords"></p>
+  </div>
+</body>
 
-  </html>
+</html>

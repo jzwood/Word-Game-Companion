@@ -33,7 +33,6 @@ function reverse(letters){
   return reversed;
 }
 
-
 //searches dictionary array for words that match user criteria
 function matchWords(){
   var front = document.getElementById("start").value.toLowerCase().trim(),
@@ -55,9 +54,9 @@ function matchWords(){
       for(var i = matchList.length-1; i>=0; i--){
         var candidate = matchList[i];
         if(candidate.length === numLetters || numLetters === -1){
-          matches += candidate + "\n";
+          matches += candidate + "&nbsp;&nbsp;  ";
         }else if(numLetters === 7 && candidate.length > 7){
-          matches += candidate + "\n";
+          matches += candidate + "&nbsp;&nbsp; ";
         }
       }
     }
@@ -69,15 +68,15 @@ function matchWords(){
         if (entry.endsWith(back)){
           // matches += entry + "\n";
           if(entry.length === numLetters || numLetters === -1){
-            matches += entry + "\n";
+            matches += entry + "&nbsp;&nbsp; ";
           }else if(numLetters === 7 && entry.length > 7){
-            matches += entry + "\n";
+            matches += entry + "&nbsp;&nbsp; ";
           }
         }entry = dictionary[++startAt];
       }
     }
   }
-  document.getElementById("matchedWords").value = matches;
+  document.getElementById("matchedWords").innerHTML = matches;
 }
 
 //returns true is <word> comes before <dictWord> alphabetically
