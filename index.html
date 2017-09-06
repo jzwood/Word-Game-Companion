@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
-<script type="text/javascript" src="src/dictionary.js"></script>
-<script type="text/javascript" src="src/word matcher.js" charset="utf-8"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
 <link href="src/styles.css" rel="stylesheet" type="text/css">
-
 <body>
   <div class="header">
-    <h2>Word&nbsp;Game Companion</h2>
+    <h2>Word&nbsp;Hound</h2>
   </div>
   <div class="container">
     <p>Enter word to quickly check if it is in the dictionary.</p><br>
     <b>Enter Word:</b>
-    <input type="text" id="isWord" onkeyup="setValidity()" style="width:130px"></input>
+    <input type="text" id="isWord" onkeyup="setValidity()" style="width:130px"/>
     <output id="YN">???</output><br>
-    <p><strong>Or</strong> search dictionary with filters.</p><br>
+    <p class="p"><strong>Or</strong> search dictionary with filters.</p><br>
     <b>Starts With:</b>
-    <input type="text" id="start"></input>
+    <input type="text" id="start"/>
     <br>
     <b>Ends &nbsp;With:</b>
-    <input type="text" id="end"></input><br>
+    <input type="text" id="end"/><br>
     <br>
     <b>Length:</b>
     <select id="letters">
@@ -36,6 +34,7 @@
     <br>
     <p class="matches" id="matchedWords"></p>
   </div>
+  <script type="text/javascript" src="src/dictionary.js"></script>
+  <script type="text/javascript" src="src/word matcher.js" charset="utf-8"></script>
 </body>
-
 </html>
