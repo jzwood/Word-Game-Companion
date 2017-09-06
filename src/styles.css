@@ -8,6 +8,7 @@ html,body{
   height:100%;
   display: block;
   background: url('wrinkled-paper.jpg') repeat-y center center;
+  background-size: cover;
 }
 
 div{
